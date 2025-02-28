@@ -9,25 +9,6 @@ export default function Header() {
         const res = await fetch(`https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=1&api_key=${apiKey}&query=${query}`);
         let data = await res.json();
         data = data.results;
-
-        let resultsDiv = document.getElementById("searchResults");
-        if (resultsDiv) {
-            resultsDiv.innerHTML = ""; 
-
-            data.slice(0, 5).forEach((film) => {
-                let filmDiv = document.createElement("div");
-                filmDiv.className = "p-2 border-b border-gray-300 bg-blue-200 hover:bg-blue-300 cursor-pointer";
-                filmDiv.innerText = film.title;
-                resultsDiv.appendChild(filmDiv);
-            });
-
-            if (data.length === 0) {
-                let noResultDiv = document.createElement("div");
-                noResultDiv.className = "p-2 text-gray-600";
-                noResultDiv.innerText = "Aucun résultat trouvé.";
-                resultsDiv.appendChild(noResultDiv);
-            }
-        }
     }
 
     function handleSearch() {

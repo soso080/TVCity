@@ -19,7 +19,7 @@ export default function Headerco() {
     async function searchFilm(query: string) {
         const apiKey = "9f68057616b722079fe2dfc8ccbefcec";
         const res = await fetch(`https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=1&api_key=${apiKey}&query=${query}`);
-        let data: { results: Film[] } = await res.json();
+        let data: { results: Film[] } = await res.json(); 
         console.log("Données reçues :", data);
     
         let resultsDiv = document.getElementById("searchResults");

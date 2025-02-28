@@ -33,7 +33,9 @@ export default function Loginform() {
             <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
               <input type="email" name="email" placeholder="Email" required className="input" />
               <input type="password" name="password" placeholder="Mot de passe" required className="input" />
+              
               {error && <p className="text-red-500">{error}</p>}
+
               <button type="submit" className="btn-primary">Se connecter</button>
             </form>
           </div>

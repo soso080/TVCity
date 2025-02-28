@@ -35,8 +35,6 @@ export default function Registerform() {
               <input type="text" name="prenom" placeholder="Prénom" required className="input" />
               <input type="email" name="email" placeholder="Email" required className="input" />
               <input type="password" name="password" placeholder="Mot de passe" required className="input" />
-              
-              {error && <p className="text-red-500">{error}</p>}
 
               <button type="submit" className="btn-primary">S'inscrire</button>
             </form>
