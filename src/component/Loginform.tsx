@@ -22,23 +22,45 @@ export default function Loginform() {
   }
 
   return (
-    <section className="bg-gray-50 dark:bg-gray-900">
-      <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-        <p>Si tu veux avoir la liste complète des films et séries ou bien plus encore, connecte-toi !</p>
-        <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-          <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-            <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-              Connecte-toi !
-            </h1>
-            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
-              <input type="email" name="email" placeholder="Email" required className="input" />
-              <input type="password" name="password" placeholder="Mot de passe" required className="input" />
-              
-              {error && <p className="text-red-500">{error}</p>}
+    <section className="bg-gray-50 dark:bg-gray-900 min-h-screen flex items-center justify-center px-4">
+      <div className="w-full max-w-md bg-white rounded-lg shadow-lg dark:border dark:bg-gray-800 dark:border-gray-700">
+        <div className="p-6 space-y-6">
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white text-center">
+            Connecte-toi !
+          </h1>
+          <p className="text-center text-gray-600 dark:text-gray-400">
+            Pour voir la liste complète des films et séries, connecte-toi !
+          </p>
 
-              <button type="submit" className="btn-primary">Se connecter</button>
-            </form>
-          </div>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+              className="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white dark:border-gray-600"
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Mot de passe"
+              required
+              className="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white dark:border-gray-600"
+            />
+
+            {error && (
+              <p aria-live="polite" className="text-red-500 text-center animate-pulse">
+                {error}
+              </p>
+            )}
+
+            <button
+              type="submit"
+              className="w-full p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+            >
+              Se connecter
+            </button>
+          </form>
         </div>
       </div>
     </section>
